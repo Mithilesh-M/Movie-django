@@ -1,0 +1,53 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% load static %}
+  <button style="border-radius: 50%;border-color: black;" disabled>
+    <a href="{% url 'movie-list' %}">
+    <i class="fa fa-arrow-left" onmouseover = "this.style.color = 'black'" onmouseout = "this.style.color = 'blue'" ></i>
+    </a>
+  </button>
+  <button style="border-color: black;" disabled>
+    <a onmouseover = "this.style.color = 'black'" onmouseout = "this.style.color = 'blue'" href="{% url 'movie-delete' movie.id %}" style="text-decoration: none;">Delete
+    </a>
+  </button>
+  <button style="border-color: black;" disabled>
+    <a onmouseover = "this.style.color = 'black'" onmouseout = "this.style.color = 'blue'" href="{% url 'movie-update' movie.id %}" style="text-decoration: none;">Update
+    </a>
+  </button>
+  <br><br>
+  <h3>Movie Detail</h3>
+  <p><strong>Title: </strong>{{ movie.title }}</p>
+  <p><strong>Prefix: </strong>{{ movie.prefix }}</p>
+  <p><strong>Subtitle: </strong>{{ movie.subtitle }}</p>
+  <p><strong>Slug: </strong>{{ movie.slug }}</p>
+  <p><strong>Director: </strong></p>
+    {% if movie.director.all %}
+      <ul>
+        {% for director in movie.director.all %}
+          <li>{{ director }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      No director for this movie
+    {% endif %}
+  </p>
+  <p><strong>Studio: </strong>{{ movie.studio }}</p>
+  <p><strong>Released Date: </strong>{{ movie.released_date }}</p>
+  <p><strong>cover_image: </strong>{{ movie.cover_image.name }}</p>
+  <p><strong>Review: </strong>{{ movie.review }}</p>
+  <p><strong>Genre: </strong></p>
+    {% if movie.genre.all %}
+      <ul>
+        {% for genre in movie.genre.all %}
+          <li>{{ genre }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      No genre for this movie
+    {% endif %}
+  </p>
+  <p><strong>ASIN: </strong>{{ movie.asin }}</p>
+
+
+{% endblock %}
