@@ -27,3 +27,7 @@ class MovieUpdateView(generic.UpdateView):
     fields = ['title', 'prefix', 'subtitle', 'slug', 'director', 'studio', 'released_date', 'genre', 'cover_image',
               'review', 'asin']
     success_url = reverse_lazy('movie-list')
+
+class MovieDeleteView(generic.DeleteView):
+    model = Movie
+    success_url = reverse_lazy('movie-list')
