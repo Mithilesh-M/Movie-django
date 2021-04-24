@@ -43,3 +43,8 @@ class DirectorCreateView(generic.CreateView):
     model = Director
     fields = ['first_name','middle_name','last_name','phone','website','birthday','gender']
     success_url = reverse_lazy('director-list')
+
+class DirectorUpdateView(generic.UpdateView):
+    model = Director
+    fields = ['first_name', 'middle_name', 'last_name', 'phone', 'website', 'birthday', 'gender']
+    success_url = reverse_lazy('director-list')
