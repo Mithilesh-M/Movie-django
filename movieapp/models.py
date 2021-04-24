@@ -14,15 +14,27 @@ class Movie(models.Model):
     genre = models.ManyToManyField('Genre')
     asin = models.UUIDField(unique=True, default=uuid.uuid4)
 
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.title
+
 class Studio(models.Model):
     title = models.CharField(max_length=200)
     prefix = models.CharField(max_length=200)
     website = models.URLField(null=True, blank=True)
     slug = models.SlugField(max_length=200)
 
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.title
+
 class Genre(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
+
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.title
 
 class Director(models.Model):
     first_name = models.CharField(max_length=200)
@@ -42,3 +54,6 @@ class Director(models.Model):
         blank=True,
         help_text='gender',
     )
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.first_name
