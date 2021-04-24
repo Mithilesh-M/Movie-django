@@ -11,4 +11,5 @@ urlpatterns = [
     path('director/', views.DirectorListView.as_view(), name='director-list'),
     path('director/create/', views.DirectorCreateView.as_view(), name='director-create'),
     path('director/update/<int:pk>', views.DirectorUpdateView.as_view(), name='director-update'),
+    path('director/delete/<int:pk>', views.DirectorDeleteView.as_view(), name='director-delete'),
 ]
