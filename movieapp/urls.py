@@ -8,4 +8,5 @@ urlpatterns = [
     path('movie/update/<int:pk>', views.MovieUpdateView.as_view(), name='movie-update'),
     path('movie/detail/<int:pk>', views.MovieeDetailView.as_view(), name='movie-detail'),
     path('movie/delete/<int:pk>', views.MovieDeleteView.as_view(), name='movie-delete'),
+    path('director/create/', views.DirectorListView.as_view(), name='director-list'),
 ]
