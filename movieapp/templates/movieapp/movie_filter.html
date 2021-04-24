@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <form method="get">
+        <table>
+        {{ filter.form.as_table }}
+        </table>
+        <input type="submit" />
+    </form>
+    {% if object_list %}
+          <table style="width:100%">
+            {% for movie in object_list %}
+            <tr>
+              <th style="text-align: center;"><a class="mylist-ele" href="{">{{ movie.title }}</a></th>
+              <th><button class="mybutton"><a href="">Delete</a></button></th>
+              <th><button class="mybutton"><a href="">Update</a></button></th>
+            </tr>
+            {% endfor %}
+          </table>
+          {% else %}
+            <p>There are no author in this app.</p>
+          {% endif %}
+
+{% endblock %}
