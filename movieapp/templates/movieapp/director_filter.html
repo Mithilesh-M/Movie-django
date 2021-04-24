@@ -14,7 +14,7 @@
           <table style="width:100%">
             {% for director in object_list %}
             <tr>
-              <th style="text-align: center;"><a class="mylist-ele" href="">{{ director }}</a></th>
+              <th style="text-align: center;"><a class="mylist-ele" href="{% url 'director-detail' director.id %}">{{ director }}</a></th>
               <th><button class="mybutton" onclick="location.href='{% url 'director-delete' director.id %}"><a href="{% url 'director-delete' director.id %}">Delete</a></button></th>
               <th><button class="mybutton" onclick="location.href='{% url 'director-update' director.id %}"><a href="{% url 'director-update' director.id %}">Update</a></button></th>
             </tr>

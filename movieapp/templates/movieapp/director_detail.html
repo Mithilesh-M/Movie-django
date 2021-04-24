@@ -1,0 +1,38 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% load static %}
+  <button style="border-radius: 50%;border-color: black;" disabled>
+    <a href="{% url 'director-list' %}">
+    <i class="fa fa-arrow-left" onmouseover = "this.style.color = 'black'" onmouseout = "this.style.color = 'blue'" ></i>
+    </a>
+  </button>
+  <button style="border-color: black;" disabled>
+    <a onmouseover = "this.style.color = 'black'" onmouseout = "this.style.color = 'blue'" href="{% url 'director-delete' director.id %}" style="text-decoration: none;">Delete
+    </a>
+  </button>
+  <button style="border-color: black;" disabled>
+    <a onmouseover = "this.style.color = 'black'" onmouseout = "this.style.color = 'blue'" href="{% url 'director-update' director.id %}" style="text-decoration: none;">Update
+    </a>
+  </button>
+  <br><br>
+  <h3>Director Detail</h3>
+  <p><strong>First Name: </strong>{{ director.first_name }}</p>
+  <p><strong>Last Name: </strong>{{ director.middle_name }}</p>
+  <p><strong>Middle Name: </strong>{{ director.last_name }}</p>
+  <p><strong>Phone: </strong>{{ director.phone }}</p>
+  <p><strong>Website: </strong>{{ director.website }}</p>
+  <p><strong>Birthday: </strong>{{ director.birthday }}</p>
+  <p><strong>Movie: </strong></p>
+    {% if director.movie_set.all %}
+      <ul>
+        {% for movie in director.movie_set.all %}
+          <li>{{ movie }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      No movie by this director
+    {% endif %}
+  </p>
+
+{% endblock %}

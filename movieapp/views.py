@@ -28,7 +28,7 @@ class MovieUpdateView(generic.UpdateView):
               'review', 'asin']
     success_url = reverse_lazy('movie-list')
 
-class MovieeDetailView(generic.DetailView):
+class MovieDetailView(generic.DetailView):
     model = Movie
 
 class MovieDeleteView(generic.DeleteView):
@@ -48,6 +48,9 @@ class DirectorUpdateView(generic.UpdateView):
     model = Director
     fields = ['first_name', 'middle_name', 'last_name', 'phone', 'website', 'birthday', 'gender']
     success_url = reverse_lazy('director-list')
+
+class DirectorDetailView(generic.DetailView):
+    model = Director
 
 class DirectorDeleteView(generic.DeleteView):
     model = Director

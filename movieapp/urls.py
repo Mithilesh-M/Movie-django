@@ -6,10 +6,11 @@ urlpatterns = [
     path('movies/', views.MovieListView.as_view(), name='movie-list'),
     path('movie/create/', views.MovieCreateView.as_view(), name= 'movie-create'),
     path('movie/update/<int:pk>', views.MovieUpdateView.as_view(), name='movie-update'),
-    path('movie/detail/<int:pk>', views.MovieeDetailView.as_view(), name='movie-detail'),
+    path('movie/detail/<int:pk>', views.MovieDetailView.as_view(), name='movie-detail'),
     path('movie/delete/<int:pk>', views.MovieDeleteView.as_view(), name='movie-delete'),
     path('director/', views.DirectorListView.as_view(), name='director-list'),
     path('director/create/', views.DirectorCreateView.as_view(), name='director-create'),
     path('director/update/<int:pk>', views.DirectorUpdateView.as_view(), name='director-update'),
+    path('director/detail/<int:pk>', views.DirectorDetailView.as_view(), name='director-detail'),
     path('director/delete/<int:pk>', views.DirectorDeleteView.as_view(), name='director-delete'),
 ]
