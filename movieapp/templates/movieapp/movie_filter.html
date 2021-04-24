@@ -16,7 +16,7 @@
             <tr>
               <th style="text-align: center;"><a class="mylist-ele" href="{">{{ movie.title }}</a></th>
               <th><button class="mybutton"><a href="">Delete</a></button></th>
-              <th><button class="mybutton"><a href="">Update</a></button></th>
+              <th><button class="mybutton" onclick="location.href='{% url 'movie-update' movie.id %}';"><a href="{% url 'movie-update' movie.id %}">Update</a></button></th>
             </tr>
             {% endfor %}
           </table>
