@@ -1,12 +1,15 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+    <button class="mybutton" onclick="location.href='{% url 'movie-create' %}';"><a href="{% url 'movie-create' %}">Create Movie</a></button>
+    <h1>Filter</h1>
     <form method="get">
         <table>
         {{ filter.form.as_table }}
         </table>
         <input type="submit" />
     </form>
+    <h1>Movie List:</h1>
     {% if object_list %}
           <table style="width:100%">
             {% for movie in object_list %}

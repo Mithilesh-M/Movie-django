@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Movie, Director, Studio, Genre
 from django_filters import views
+from django.views import generic
 def show_index(request):
     context = {
         'total_movie': Movie.objects.all().count(),
@@ -13,3 +14,7 @@ def show_index(request):
 class MovieListView(views.FilterView):
     model = Movie
     filterset_fields = ['title','director','studio','released_date','genre','asin']
+
+class MovieCreateView(generic.CreateView):
+    model = Movie
+    fields = ['title','prefix','subtitle','slug','director','studio','released_date','genre','cover_image','review','asin']
