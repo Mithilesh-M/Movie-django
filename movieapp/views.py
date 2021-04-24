@@ -18,3 +18,4 @@ class MovieListView(views.FilterView):
 class MovieCreateView(generic.CreateView):
     model = Movie
     fields = ['title','prefix','subtitle','slug','director','studio','released_date','genre','cover_image','review','asin']
+
