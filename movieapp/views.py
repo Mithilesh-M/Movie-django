@@ -38,3 +38,8 @@ class MovieDeleteView(generic.DeleteView):
 class DirectorListView(views.FilterView):
     model = Director
     filterset_fields = ['first_name','middle_name','last_name','phone','website','birthday','gender']
+
+class DirectorCreateView(generic.CreateView):
+    model = Director
+    fields = ['first_name','middle_name','last_name','phone','website','birthday','gender']
+    success_url = reverse_lazy('director-list')

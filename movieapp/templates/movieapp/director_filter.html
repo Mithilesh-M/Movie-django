@@ -1,7 +1,7 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-    <button class="mybutton" onclick=""><a href="">Create Director</a></button>
+    <button class="mybutton" onclick="location.href='{% url 'director-create' %}"><a href="{% url 'director-create' %}">Create Director</a></button>
     <h1>Filter</h1>
     <form method="get">
         <table>
