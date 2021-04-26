@@ -94,3 +94,6 @@ class GenreUpdateView(generic.UpdateView):
 class GenreDeleteView(generic.DeleteView):
     model = Genre
     success_url = reverse_lazy('genre-list')
+
+class GenreDetailView(generic.DetailView):
+    model = Genre
