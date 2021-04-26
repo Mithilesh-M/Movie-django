@@ -16,7 +16,7 @@
             <tr>
               <th style="text-align: center;"><a class="mylist-ele" href="{% url 'director-detail' director.id %}">{{ director }}</a></th>
               <th><button class="mybutton" onclick=""><a href="">Delete</a></button></th>
-              <th><button class="mybutton" onclick=""><a href="">Update</a></button></th>
+              <th><button class="mybutton" onclick="location.href='{% url 'studio-update' studio.id% %}';"><a href="{% url 'studio-update' studio.id%}">Update</a></button></th>
             </tr>
             {% endfor %}
           </table>

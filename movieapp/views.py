@@ -64,3 +64,8 @@ class StudioCreateView(generic.CreateView):
     model = Studio
     fields = ['title','prefix','website','slug']
     success_url = reverse_lazy('studio-list')
+
+class StudioUpdateView(generic.UpdateView):
+    model = Studio
+    fields = ['title', 'prefix', 'website', 'slug']
+    success_url = reverse_lazy('studio-list')
