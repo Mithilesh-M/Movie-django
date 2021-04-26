@@ -16,12 +16,12 @@
             <tr>
               <th style="text-align: center;"><a class="mylist-ele" href="">{{ genre }}</a></th>
               <th><button class="mybutton" onclick=""><a href="">Delete</a></button></th>
-              <th><button class="mybutton" onclick=""><a href="">Update</a></button></th>
+              <th><button class="mybutton" onclick="location.href='{% url 'genre-update' genre.id %}';"><a href="{% url 'genre-update' genre.id %}">Update</a></button></th>
             </tr>
             {% endfor %}
           </table>
           {% else %}
-            <p>There are no director in this app.</p>
+            <p>There are no genres in this app.</p>
           {% endif %}
 
 {% endblock %}

@@ -85,3 +85,8 @@ class GenreCreateView(generic.CreateView):
     model = Genre
     fields = ['title','slug']
     success_url = reverse_lazy('genre-list')
+
+class GenreUpdateView(generic.UpdateView):
+    model = Genre
+    fields = ['title','slug']
+    success_url = reverse_lazy('genre-list')

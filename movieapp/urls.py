@@ -20,4 +20,5 @@ urlpatterns = [
     path('studio/detail/<int:pk>', views.StudioDetailView.as_view(), name='studio-detail'),
     path('genres/', views.GenreListView.as_view(), name='genre-list'),
     path('genre/create/', views.GenreCreateView.as_view(), name='genre-create'),
+    path('genre/update/<int:pk>', views.GenreUpdateView.as_view(), name='genre-update'),
 ]
