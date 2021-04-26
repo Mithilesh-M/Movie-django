@@ -1,0 +1,27 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <button class="mybutton" onclick=""><a href="">Create Genre</a></button>
+    <h1>Filter</h1>
+    <form method="get">
+        <table>
+        {{ filter.form.as_table }}
+        </table>
+        <input type="submit" />
+    </form>
+    <h1>Genre List:</h1>
+    {% if object_list %}
+          <table style="width:100%">
+            {% for genre in object_list %}
+            <tr>
+              <th style="text-align: center;"><a class="mylist-ele" href="">{{ genre }}</a></th>
+              <th><button class="mybutton" onclick=""><a href="">Delete</a></button></th>
+              <th><button class="mybutton" onclick=""><a href="">Update</a></button></th>
+            </tr>
+            {% endfor %}
+          </table>
+          {% else %}
+            <p>There are no director in this app.</p>
+          {% endif %}
+
+{% endblock %}

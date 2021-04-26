@@ -37,7 +37,7 @@
                 <a class="nav-link" style="color: deeppink" href="{% url 'director-list' %}">Directors</a>
               </li>
                 <li class="nav-item">
-                <a class="nav-link" style="color: deeppink" href="#">Genres</a>
+                <a class="nav-link" style="color: deeppink" href="{% url 'genre-list' %}">Genres</a>
               </li>
             </ul>
           </div>
@@ -49,9 +49,9 @@
       <div class="col-sm-2 pt-3" style="background-color:teal">
         <ul class="sidebar-nav" style="list-style-type: none;" >
           <li><a class= "" style="color: deeppink;" href="{% url 'movie-create' %}">Create Movie</a></li>
-          <li><a class= "" style="color: deeppink;" href="{% url 'director-create' %}">Create Studio</a></li>
+          <li><a class= "" style="color: deeppink;" href="{% url 'studio-create' %}">Create Studio</a></li>
             <li><a class= "" style="color: deeppink;" href="">Create Genre</a></li>
-            <li><a class= "" style="color: deeppink;" href="">Create Director</a></li>
+            <li><a class= "" style="color: deeppink;" href="{% url 'director-create' %}">Create Director</a></li>
         </ul>
       </div>
       <div class="col-sm-10">{% block content %} {% endblock %}

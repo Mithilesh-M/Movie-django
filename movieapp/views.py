@@ -76,3 +76,7 @@ class StudioDeleteView(generic.DeleteView):
 
 class StudioDetailView(generic.DetailView):
     model = Studio
+
+class GenreListView(views.FilterView):
+    model = Genre
+    filterset_fields = ['title','slug']
