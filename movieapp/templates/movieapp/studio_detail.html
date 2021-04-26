@@ -1,0 +1,36 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% load static %}
+  <button style="border-radius: 50%;border-color: black;" disabled>
+    <a href="{% url 'studio-list' %}">
+    <i class="fa fa-arrow-left" onmouseover = "this.style.color = 'black'" onmouseout = "this.style.color = 'blue'" ></i>
+    </a>
+  </button>
+  <button style="border-color: black;" disabled>
+    <a onmouseover = "this.style.color = 'black'" onmouseout = "this.style.color = 'blue'" href="{% url 'studio-delete' studio.id %}" style="text-decoration: none;">Delete
+    </a>
+  </button>
+  <button style="border-color: black;" disabled>
+    <a onmouseover = "this.style.color = 'black'" onmouseout = "this.style.color = 'blue'" href="{% url 'studio-update' studio.id %}" style="text-decoration: none;">Update
+    </a>
+  </button>
+  <br><br>
+  <h3>Studio Detail</h3>
+  <p><strong>Title: </strong>{{ studio.title }}</p>
+  <p><strong>Prefix: </strong>{{ studio.prefix }}</p>
+  <p><strong>Website: </strong>{{ studio.website }}</p>
+  <p><strong>Slug: </strong>{{ studio.slug }}</p>
+  <p><strong>Movies: </strong></p>
+    {% if studio.movie_set.all %}
+      <ul>
+        {% for movie in studio.movie_set.all %}
+          <li>{{ movie }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      No movie by this studio
+    {% endif %}
+  </p>
+
+{% endblock %}

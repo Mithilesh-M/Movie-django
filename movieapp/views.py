@@ -73,3 +73,6 @@ class StudioUpdateView(generic.UpdateView):
 class StudioDeleteView(generic.DeleteView):
     model = Studio
     success_url = reverse_lazy('studio-list')
+
+class StudioDetailView(generic.DetailView):
+    model = Studio
