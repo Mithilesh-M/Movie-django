@@ -3,6 +3,7 @@ from .models import Movie, Director, Studio, Genre
 from django_filters import views
 from django.views import generic
 from django.urls import reverse_lazy
+import os
 
 def show_index(request):
     context = {
@@ -30,6 +31,15 @@ class MovieUpdateView(generic.UpdateView):
 
 class MovieDetailView(generic.DetailView):
     model = Movie
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        obj = Movie.objects.get(pk=self.kwargs.get('pk'))
+        image = obj.cover_image.name
+        image = os.path.basename(image)
+        image = 'images'+'//'+image
+        context['image_name'] = image
+        return context
 
 class MovieDeleteView(generic.DeleteView):
     model = Movie

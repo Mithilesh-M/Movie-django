@@ -34,7 +34,7 @@
   </p>
   <p><strong>Studio: </strong>{{ movie.studio }}</p>
   <p><strong>Released Date: </strong>{{ movie.released_date }}</p>
-  <p><strong>cover_image: </strong>{{ movie.cover_image.name }}</p>
+  <p><strong>cover_image: </strong><img src="{% static image_name %}" width="50%" height="50%"></p></p>
   <p><strong>Review: </strong>{{ movie.review }}</p>
   <p><strong>Genre: </strong></p>
     {% if movie.genre.all %}
