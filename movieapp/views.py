@@ -59,3 +59,8 @@ class DirectorDeleteView(generic.DeleteView):
 class StudioListView(views.FilterView):
     model = Studio
     filterset_fields = ['title','prefix','website','slug']
+
+class StudioCreateView(generic.CreateView):
+    model = Studio
+    fields = ['title','prefix','website','slug']
+    success_url = reverse_lazy('studio-list')

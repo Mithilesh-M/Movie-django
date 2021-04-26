@@ -1,7 +1,7 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-    <button class="mybutton" onclick=""><a href="">Create Studio</a></button>
+    <button class="mybutton" onclick="location.href='{% url 'studio-create' %}';"><a href="{% url 'studio-create' %}">Create Studio</a></button>
     <h1>Filter</h1>
     <form method="get">
         <table>
