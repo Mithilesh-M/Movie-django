@@ -1,7 +1,7 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-    <button class="mybutton" onclick=""><a href="">Create Genre</a></button>
+    <button class="mybutton" onclick="location.href='{% url 'genre-create' %}';"><a href="{% url 'genre-create' %}">Create Genre</a></button>
     <h1>Filter</h1>
     <form method="get">
         <table>

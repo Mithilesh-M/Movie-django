@@ -80,3 +80,8 @@ class StudioDetailView(generic.DetailView):
 class GenreListView(views.FilterView):
     model = Genre
     filterset_fields = ['title','slug']
+
+class GenreCreateView(generic.CreateView):
+    model = Genre
+    fields = ['title','slug']
+    success_url = reverse_lazy('genre-list')
