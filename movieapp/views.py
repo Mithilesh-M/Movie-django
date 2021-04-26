@@ -55,3 +55,7 @@ class DirectorDetailView(generic.DetailView):
 class DirectorDeleteView(generic.DeleteView):
     model = Director
     success_url = reverse_lazy('director-list')
+
+class StudioListView(views.FilterView):
+    model = Studio
+    filterset_fields = ['title','prefix','website','slug']

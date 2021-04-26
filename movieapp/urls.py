@@ -13,4 +13,5 @@ urlpatterns = [
     path('director/update/<int:pk>', views.DirectorUpdateView.as_view(), name='director-update'),
     path('director/detail/<int:pk>', views.DirectorDetailView.as_view(), name='director-detail'),
     path('director/delete/<int:pk>', views.DirectorDeleteView.as_view(), name='director-delete'),
+    path('studios/', views.StudioListView.as_view(), name='studio-list'),
 ]
